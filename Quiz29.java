@@ -14,11 +14,18 @@ public class Quiz29 {
                 System.out.print("Tebak angka (1-10): ");
                 int answer = input.nextInt();
                 input.nextLine();
-                success = (answer == number);
+
+                if (answer == number) {
+                    success = true;
+                } else if (answer < number) {
+                    System.out.println("Angka terlalu kecil");
+                } else {
+                    System.out.println("Angka terlalu besar.");
+                }
             } while (!success);
+
             System.out.print("Apakah Anda ingin mengulang permainan (Y/y)?");
             menu = input.nextLine().charAt(0);
         } while (menu == 'y' || menu == 'Y');
-
     }
 }
